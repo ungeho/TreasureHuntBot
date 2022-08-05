@@ -82,6 +82,9 @@ def treasure_maps(x,y,area_idx):
     dist  = 10000
     dist2 = 10000
     err   = 0
+
+    # 暁月地域(地図G14)
+
     # ラヴィリンソス
     if   area_idx == 0 :
         dist  = distance(x,y,32,14)
@@ -237,6 +240,169 @@ def treasure_maps(x,y,area_idx):
         if(dist > dist2):
             treasure_priority = 7
             dist = dist2
+
+    # 漆黒地域(地図G12)
+
+    # レイクランド
+    elif area_idx == 5 :
+        dist  = distance(x,y,8,21)
+        dist2 = distance(x,y,10,25)
+        if(dist > dist2):
+            treasure_priority = 1
+            dist = dist2
+        dist2 = distance(x,y,10,11)
+        if(dist > dist2):
+            treasure_priority = 2
+            dist = dist2
+        dist2 = distance(x,y,13,12)
+        if(dist > dist2):
+            treasure_priority = 3
+            dist = dist2
+        dist2 = distance(x,y,17,17)
+        if(dist > dist2):
+            treasure_priority = 4
+            dist = dist2
+        dist2 = distance(x,y,18,7)
+        if(dist > dist2):
+            treasure_priority = 5
+            dist = dist2
+        dist2 = distance(x,y,34,25)
+        if(dist > dist2):
+            treasure_priority = 6
+            dist = dist2
+        dist2 = distance(x,y,38,13)
+        if(dist > dist2):
+            treasure_priority = 7
+            dist = dist2
+
+    # コルシア島
+    elif area_idx == 6 :
+        dist  = distance(x,y,7,18)
+        dist2 = distance(x,y,11,13)
+        if(dist > dist2):
+            treasure_priority = 1
+            dist = dist2
+        dist2 = distance(x,y,13,16)
+        if(dist > dist2):
+            treasure_priority = 2
+            dist = dist2
+        dist2 = distance(x,y,20,17)
+        if(dist > dist2):
+            treasure_priority = 3
+            dist = dist2
+        dist2 = distance(x,y,21,9)
+        if(dist > dist2):
+            treasure_priority = 4
+            dist = dist2
+        dist2 = distance(x,y,30,17)
+        if(dist > dist2):
+            treasure_priority = 5
+            dist = dist2
+        dist2 = distance(x,y,34,10)
+        if(dist > dist2):
+            treasure_priority = 6
+            dist = dist2
+        dist2 = distance(x,y,33,31)
+        if(dist > dist2):
+            treasure_priority = 7
+            dist = dist2
+
+    # イルメグ
+    elif area_idx == 7 :
+        dist  = distance(x,y,31,4)
+        dist2 = distance(x,y,33,10)
+        if(dist > dist2):
+            treasure_priority = 1
+            dist = dist2
+        dist2 = distance(x,y,25,12)
+        if(dist > dist2):
+            treasure_priority = 2
+            dist = dist2
+        dist2 = distance(x,y,21,7)
+        if(dist > dist2):
+            treasure_priority = 3
+            dist = dist2
+        dist2 = distance(x,y,10,13)
+        if(dist > dist2):
+            treasure_priority = 4
+            dist = dist2
+        dist2 = distance(x,y,7,17)
+        if(dist > dist2):
+            treasure_priority = 5
+            dist = dist2
+        dist2 = distance(x,y,12,20)
+        if(dist > dist2):
+            treasure_priority = 6
+            dist = dist2
+        dist2 = distance(x,y,14,27)
+        if(dist > dist2):
+            treasure_priority = 7
+            dist = dist2
+
+    # ラケティカ大森林
+    elif area_idx == 8 :
+        dist  = distance(x,y,24,15)
+        dist2 = distance(x,y,34,17)
+        if(dist > dist2):
+            treasure_priority = 1
+            dist = dist2
+        dist2 = distance(x,y,35,22)
+        if(dist > dist2):
+            treasure_priority = 2
+            dist = dist2
+        dist2 = distance(x,y,24,27)
+        if(dist > dist2):
+            treasure_priority = 3
+            dist = dist2
+        dist2 = distance(x,y,22,32)
+        if(dist > dist2):
+            treasure_priority = 4
+            dist = dist2
+        dist2 = distance(x,y,26,34)
+        if(dist > dist2):
+            treasure_priority = 5
+            dist = dist2
+        dist2 = distance(x,y,13,24)
+        if(dist > dist2):
+            treasure_priority = 6
+            dist = dist2
+        dist2 = distance(x,y,11,19)
+        if(dist > dist2):
+            treasure_priority = 7
+            dist = dist2
+
+    # テンペスト
+    elif area_idx == 9 :
+        dist  = distance(x,y,30,20)
+        dist2 = distance(x,y,37,17)
+        if(dist > dist2):
+            treasure_priority = 1
+            dist = dist2
+        dist2 = distance(x,y,32,5)
+        if(dist > dist2):
+            treasure_priority = 2
+            dist = dist2
+        dist2 = distance(x,y,25,11)
+        if(dist > dist2):
+            treasure_priority = 3
+            dist = dist2
+        dist2 = distance(x,y,19,8)
+        if(dist > dist2):
+            treasure_priority = 4
+            dist = dist2
+        dist2 = distance(x,y,12,11)
+        if(dist > dist2):
+            treasure_priority = 5
+            dist = dist2
+        dist2 = distance(x,y,13,14)
+        if(dist > dist2):
+            treasure_priority = 6
+            dist = dist2
+        dist2 = distance(x,y,16,18)
+        if(dist > dist2):
+            treasure_priority = 7
+            dist = dist2
+
     else :
         err = 1
 
@@ -312,6 +478,18 @@ def sort_coords_message(coords):
     # 宝箱の巡回優先度を付与
     priority = []
     priority = treasure_priority(x_coords,y_coords,treasure)
+
+    # 宝箱の巡回優先度で整列
+    i = 0
+    while(i < coord_max - 1):
+        j = i + 1
+        while(j < coord_max):
+            if(priority[i] > priority[j]):
+                priority[i],priority[j] = priority[j],priority[i]
+                coords[i],coords[j] = coords[j],coords[i]
+            j += 1
+        i += 1
+
 
     #最後に対象外のマップの優先度を-1にしておく
     i = coord_max
