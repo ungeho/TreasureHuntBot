@@ -83,10 +83,45 @@ def treasure_maps(x,y,area_idx):
     dist2 = 10000
     err   = 0
 
+    # 暁月地域(地図G15)
+
+    # エルピス
+    if   area_idx == 0 :
+        dist  = distance(x,y,13,9)
+        dist2 = distance(x,y,30,10)
+        if(dist > dist2):
+            treasure_priority = 1
+            dist = dist2
+        dist2 = distance(x,y,29,18)
+        if(dist > dist2):
+            treasure_priority = 2
+            dist = dist2
+        dist2 = distance(x,y,37,19)
+        if(dist > dist2):
+            treasure_priority = 3
+            dist = dist2
+        dist2 = distance(x,y,23,25)
+        if(dist > dist2):
+            treasure_priority = 4
+            dist = dist2
+        dist2 = distance(x,y,27,24)
+        if(dist > dist2):
+            treasure_priority = 5
+            dist = dist2
+        dist2 = distance(x,y,12,33)
+        if(dist > dist2):
+            treasure_priority = 6
+            dist = dist2
+        dist2 = distance(x,y,17,31)
+        if(dist > dist2):
+            treasure_priority = 7
+            dist = dist2
+
+
     # 暁月地域(地図G14)
 
     # ラヴィリンソス
-    if   area_idx == 0 :
+    elif   area_idx == 1 :
         dist  = distance(x,y,32,14)
         dist2 = distance(x,y,23,10)
         if(dist > dist2):
@@ -117,7 +152,7 @@ def treasure_maps(x,y,area_idx):
             treasure_priority = 7
             dist = dist2
     # サベネア島
-    elif area_idx == 1 :
+    elif area_idx == 2 :
         dist  = distance(x,y,31,14)
         dist2 = distance(x,y,27,9)
         if(dist > dist2):
@@ -148,7 +183,7 @@ def treasure_maps(x,y,area_idx):
             treasure_priority = 7
             dist = dist2
     # ガレマルド
-    elif area_idx == 2 :
+    elif area_idx == 3 :
         dist  = distance(x,y,34,17)
         dist2 = distance(x,y,34,9)
         if(dist > dist2):
@@ -179,7 +214,7 @@ def treasure_maps(x,y,area_idx):
             treasure_priority = 7
             dist = dist2
     # 嘆きの海
-    elif area_idx == 3 :
+    elif area_idx == 4 :
         dist  = distance(x,y,17,19)
         dist2 = distance(x,y,18,25)
         if(dist > dist2):
@@ -210,7 +245,7 @@ def treasure_maps(x,y,area_idx):
             treasure_priority = 7
             dist = dist2
     # ウルティマ・トゥーレ
-    elif area_idx == 4 :
+    elif area_idx == 5 :
         dist  = distance(x,y,30,9)
         dist2 = distance(x,y,25,17)
         if(dist > dist2):
@@ -244,7 +279,7 @@ def treasure_maps(x,y,area_idx):
     # 漆黒地域(地図G12)
 
     # レイクランド
-    elif area_idx == 5 :
+    elif area_idx == 6 :
         dist  = distance(x,y,8,21)
         dist2 = distance(x,y,10,25)
         if(dist > dist2):
@@ -276,7 +311,7 @@ def treasure_maps(x,y,area_idx):
             dist = dist2
 
     # コルシア島
-    elif area_idx == 6 :
+    elif area_idx == 7 :
         dist  = distance(x,y,7,18)
         dist2 = distance(x,y,11,13)
         if(dist > dist2):
@@ -308,7 +343,7 @@ def treasure_maps(x,y,area_idx):
             dist = dist2
 
     # イルメグ
-    elif area_idx == 7 :
+    elif area_idx == 8 :
         dist  = distance(x,y,31,4)
         dist2 = distance(x,y,33,10)
         if(dist > dist2):
@@ -340,7 +375,7 @@ def treasure_maps(x,y,area_idx):
             dist = dist2
 
     # ラケティカ大森林
-    elif area_idx == 8 :
+    elif area_idx == 9 :
         dist  = distance(x,y,24,15)
         dist2 = distance(x,y,34,17)
         if(dist > dist2):
@@ -372,7 +407,7 @@ def treasure_maps(x,y,area_idx):
             dist = dist2
 
     # テンペスト
-    elif area_idx == 9 :
+    elif area_idx == 10 :
         dist  = distance(x,y,30,20)
         dist2 = distance(x,y,37,17)
         if(dist > dist2):
