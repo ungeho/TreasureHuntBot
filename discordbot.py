@@ -342,8 +342,41 @@ def treasure_maps(x,y,area_idx):
             treasure_priority = 7
             dist = dist2
 
-    # イルメグ
+    # アム・アレーン
     elif area_idx == 8 :
+        dist  = distance(x,y,12,14)
+        dist2 = distance(x,y,13,30)
+        if(dist > dist2):
+            treasure_priority = 1
+            dist = dist2
+        dist2 = distance(x,y,27,13)
+        if(dist > dist2):
+            treasure_priority = 2
+            dist = dist2
+        dist2 = distance(x,y,26,23)
+        if(dist > dist2):
+            treasure_priority = 3
+            dist = dist2
+        dist2 = distance(x,y,30,30)
+        if(dist > dist2):
+            treasure_priority = 4
+            dist = dist2
+        dist2 = distance(x,y,32,8)
+        if(dist > dist2):
+            treasure_priority = 5
+            dist = dist2
+        dist2 = distance(x,y,36,11)
+        if(dist > dist2):
+            treasure_priority = 6
+            dist = dist2
+        dist2 = distance(x,y,34,17)
+        if(dist > dist2):
+            treasure_priority = 7
+            dist = dist2
+
+
+    # イルメグ
+    elif area_idx == 9 :
         dist  = distance(x,y,31,4)
         dist2 = distance(x,y,33,10)
         if(dist > dist2):
@@ -375,7 +408,7 @@ def treasure_maps(x,y,area_idx):
             dist = dist2
 
     # ラケティカ大森林
-    elif area_idx == 9 :
+    elif area_idx == 10 :
         dist  = distance(x,y,24,15)
         dist2 = distance(x,y,34,17)
         if(dist > dist2):
@@ -407,7 +440,7 @@ def treasure_maps(x,y,area_idx):
             dist = dist2
 
     # テンペスト
-    elif area_idx == 10 :
+    elif area_idx == 11 :
         dist  = distance(x,y,30,20)
         dist2 = distance(x,y,37,17)
         if(dist > dist2):
