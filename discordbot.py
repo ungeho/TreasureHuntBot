@@ -14,8 +14,11 @@ import discord
 TOKEN = os.environ['COORDBOT_TOKEN']
 
 
+# Intentsオブジェクトを生成
+# 全てのIntentをTrue
+intents = discord.Intents.all()
 # 接続に必要なオブジェクトを生成
-client = discord.Client()
+client = discord.Client(intents=intents)
 
 # エリア情報の読み込み
 def read_areas():
